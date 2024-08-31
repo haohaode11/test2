@@ -6,7 +6,9 @@
         <h1>用户列表</h1>
         <!-- 姓名和账号的输入框 -->
         <div class="input-group">
+            <span>姓名：</span>
           <input v-model="name" placeholder="请输入姓名" />
+            <span>账号：</span>
           <input v-model="account" placeholder="请输入账号" />
           <!-- 查询按钮和添加按钮 -->
           <button @click="query">查询</button>
@@ -95,10 +97,15 @@
     flex-wrap: wrap;
   }
   
-  .input-group input,
+  .input-group input {
+    flex:2; /* 输入框占更多的空间 */
+    min-width: 150px; /* 设置最小宽度 */
+  }
+  
   .input-group button {
-    flex: 1;
-    min-width: 120px; /* 设置最小宽度 */
+    flex: 1; /* 按钮占较少的空间 */
+    min-width: 40px; /* 设置最小宽度 */
+    padding: 5px 10px; /*设置按钮内边距
   }
   
   .user-list {
@@ -125,7 +132,7 @@
   }
   
   button {
-    margin-left: 10px;
+    margin-left: 5px;
   }
   </style>
   
